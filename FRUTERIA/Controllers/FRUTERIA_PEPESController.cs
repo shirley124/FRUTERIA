@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FRUTERIA.Data;
 using FRUTERIA.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FRUTERIA.Views.FRUTERIA_PEPES
 {
@@ -44,6 +45,7 @@ namespace FRUTERIA.Views.FRUTERIA_PEPES
         }
 
         // GET: FRUTERIA_PEPES/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -66,6 +68,8 @@ namespace FRUTERIA.Views.FRUTERIA_PEPES
         }
 
         // GET: FRUTERIA_PEPES/Edit/5
+        [Authorize]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -117,6 +121,8 @@ namespace FRUTERIA.Views.FRUTERIA_PEPES
         }
 
         // GET: FRUTERIA_PEPES/Delete/5
+        [Authorize]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
